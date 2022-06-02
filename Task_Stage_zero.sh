@@ -69,4 +69,4 @@ cd
 exit
 
 
-echo "$https://github.com/Omoleye-J/blob/main/Team-Rosalind-Task_Stage_zero"
+echo "$https://github.com/Omoleye-J/Team-Rosalind/blob/main/Task_Stage_zero.sh"
