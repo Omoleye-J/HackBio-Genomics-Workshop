@@ -43,12 +43,7 @@ mkdir output
 
 
 #implementing fastqc on the datasets
-fastqc Alsen_R1.fastq.gz -o output/
-fastqc Alsen_R2.fastq.gz -o output/
-fastqc Chara_R1.fastq.gz -o output/
-fastqc Chara_R2.fastq.gz -o output/
-fastqc Drysdale_R1.fastq.gz -o output/
-fastqc Drysdale_R2.fastq.gz -o output/
+fastqc *.fastq.gz -O output/
 
 
 #implementing multiqc on the qc datasets
