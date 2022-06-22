@@ -41,7 +41,7 @@ wget http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/Trimmomatic-
 
 #unzip Trimmomatic-0.39.zip
 unzip Trimmomatic-0.39.zip
-cp Trimmomatic-039/adapters/TruSeq3-PE $PWD
+cp Trimmomatic-039/adapters/TruSeq3-PE.fa $PWD
 ls *.fastq.gz > list.txt
 cat list.txt
 nano list.txt
@@ -173,6 +173,8 @@ done
 cd ..
 
 #Variant calling and classification
+wget  https://sourceforge.net/projects/varscan/files/VarScan.v2.3.9.jar	   
+
 #convert variant to pileup
 mkdir Variants
 
