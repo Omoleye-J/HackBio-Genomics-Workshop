@@ -135,7 +135,7 @@ nano duplicate.sh
 #use the command markdup
 for sample in `cat list.txt`
 do
-	samtools collate ${sample}.filtered1.bam ${sample}.namecollate.bam
+	samtools collate ${sample}.filtered1.bam ${sample}.namecollate
         samtools fixmate -m ${sample}.namecollate.bam ${sample}.fixmate.bam
         samtools sort -@ 32 -o ${sample}.positionsort.bam ${sample}.fixmate.bam
         samtools markdup -@32 -r ${sample}.positionsort.bam ${sample}.clean.bam
