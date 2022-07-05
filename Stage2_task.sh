@@ -158,7 +158,7 @@ bash leftalign.sh
 nano recalibrate.sh
 for sample in `cat list.txt`
 do
-samtools calmd -@ 32 -b ${sample}.leftAlign.bam hg19.chr5_12_17.fa > ${sample}.recalibrate.bam
+        samtools calmd -@ 32 -b ${sample}.leftAlign.bam hg19.chr5_12_17.fa > ${sample}.recalibrate.bam
 done 
 #save and exit nano
 
