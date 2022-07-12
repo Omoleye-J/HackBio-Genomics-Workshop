@@ -16,7 +16,7 @@ wget https://raw.githubusercontent.com/HackBio-Internship/public_datasets/main/G
 
 
 #generate eigenvalues with plink
-plink --bfile asia --pca --chr-set 36 no-xy
+plink --bfile asia --pca 
 
 #download and install Rstudio on PC
 #download datasets including plink outputs from the server into PC using WinSCP
@@ -55,6 +55,8 @@ merge_data <- merge(x= pca1,y= metadata, by.x = "V2", by.y = "Sample.name", all 
 
 #plot and color by population
 ggplot(data=merge_data, aes(V3,V4,color = Population.code)) + geom_point()
+
+
 #save and close RStudio
 
 
@@ -63,7 +65,7 @@ ggplot(data=merge_data, aes(V3,V4,color = Population.code)) + geom_point()
 #perform linkage disequilibrium 
 
 #create a LD pruned set of markers
-plink --bfile asia --indep-pairwise 50 10 0.2 --out prune1 
+plink --bfile asia --indep-pairwise 1000 10 0.01 --out prune1
 
 #calculate identity by descent score on the pruned marker list
 # DNA segments that are IBD are IBS per definition
@@ -71,9 +73,6 @@ plink --bfile asia --extract prune1.prune.in --genome --out ibs1
 
 #cluster individuals into homogeneous groups and perform a multidimensional scaling analysis 
 plink --bfile asia --read-genome ibs1.genome --cluster --ppc 1e-3 --cc --mds-plot 2 --out strat1 
-
-#adjust filtering values and perform pruning again
-plink --bfile asia --indep-pairwise 1000 10 0.01 --out prune2
 
 #extract SNPs on chromosome 6 and save into a bed file
 plink --bfile asia --chr 6  --from-kb 231 --to-kb 171031 --make-bed --out asia_c6
@@ -84,14 +83,6 @@ plink --bfile asia_c6 --r2 --out asia_c6
 #calculate ld matrix and report SNPs with r2 value of 1
 plink --bfile asia_c6 --ld-window-r2 1 --out asia_c6f
 
-#extract SNPs on chromosome 8 and save into a bed file
-plink --bfile asia --chr 8  --from-kb 220 --to-kb 146253 --make-bed --out asia_c8
-
-#report pairwise Linkage Disequilibrium (r-squared) for SNPs in this region
-plink --bfile asia_c8 --r2 --out asia_c8
-
-#calculate ld matrix and report SNPs with r2 value of 1
-plink --bfile asia_c8 --ld-window-r2 1 --out asia_c8f
 
 #switch back to R studio for further data analysis
 
@@ -115,18 +106,5 @@ dim(tolani_finalprune6)
 #remove repititions and check length of unique values
 length(unique(tolani_finalprune6$SNP_B))
 
-#assign asia_c8.ld to tolani
-tolani <- read.table('asia_c8.ld', header=T)
 
-#check dimension of data
-dim(tolani)
-
-#further prune out r2 values less than 0.99999
-tolani_finalprune8 <- subset(tolani, R2 >0.99999)
-
-#check dimension of the pruned data
-dim(tolani_finalprune8)
-
-#remove repititions and check length of unique values
-length(unique(tolani_finalprune8$SNP_B))
 
