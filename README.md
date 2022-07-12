@@ -24,11 +24,13 @@ Technical Information
 
 PCA and MDS were carried out in Linux using PLINK. PCA and MDS plots were generated in RStudio (see plots in Rplot files above). For further information,
 
-see Technical Specification _project3 
+see Technical Specification _project3.pdf 
 
 see pharmocogenomics_project.sh for Linux codes
 
-See pharmacogenomics-PCA&MDS.R for R codes
+See pharmacogenomics-PCA&MDS.R for R script
+
+See Technical article-PHAMACOGENOMICS.pdf
 
 Reference Tutorials
 
