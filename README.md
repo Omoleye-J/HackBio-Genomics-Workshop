@@ -10,9 +10,10 @@ Also, I further executed basic commands like creating and changing directory and
 I learnt how to process biological data in a conda environment using fastqc, gasp and multiqc. My codes can be found in stage1.sh
 
 # Stage2 (Week 3)
-This week's task was focused on replicating oncovenomics tutorials in linux and Galaxy. I processed normal and tumor datasets and performed variants calling and annotation.
+This week's task was focused on replicating oncogenomics tutorials in linux and Galaxy. I processed normal and tumor datasets and performed variants calling and annotation.
 My codes are in Stage2_task.sh. 
-Also, there was a live coding assessment session where I used bcftools to merge files.
+Also, there was a live coding assessment session where I used bcftools to merge files. see livecodingtest.sh
+
 # Stage 3 (Week 4&5)
 PROJECT TOPIC ; PHARMACOGENOMICS OF HUMAN LEUKOCYTES ANTIGEN (HLA) VARIANTS IN 4 ASIAN GROUPS
 
