@@ -7,7 +7,7 @@ Also, I further executed basic commands like creating and changing directory and
  You can find my codes in Stage_0.sh
 
 # Stage 1 (Week 2)
-I learnt how to process biological data in a conda environment using fastqc, gasp and multiqc. My codes can be found in stage1.sh
+I learnt how to process biological data in a conda environment using fastqc, fastp and multiqc. My codes can be found in stage1.sh
 
 # Stage2 (Week 3)
 This week's task was focused on replicating oncogenomics tutorials in linux and Galaxy. I processed normal and tumor datasets and performed variants calling and annotation.
